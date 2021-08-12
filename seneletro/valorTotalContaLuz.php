@@ -1,68 +1,50 @@
 <?php
 
-
-print_r($_POST);
-
-$quilowattsHora= $_POST["quilowattsHora"];
-$nomeCompletoCliente= $_POST["nomeCompletoCliente"];
+$consumo= $_POST["consumo"];
+$nome= $_POST["nome"];
 $endereco= $_POST["endereco"];
 $agradecimento = "Obrigado por economizar!";
 
 
-if($quilowattsHora >120) {
+if($consumo >120) {
 
     
-$valorConta= (0.42 * $quilowattsHora );
+$valorConta= 0.42 * $consumo;
 
-echo "<br> <br>  <font size='5'> <b> Conta de luz de  $nomeCompletoCliente </b> </font> <br>";
-
-echo "$endereco. <br>";
-
-echo "<font color='#FF0000'> Consumo: $quilowattsHora kWh </font> <br>";
-
-echo "O valor a pagar:  <font size='5'> <b> R$$valorConta </b> </font> <br>";
+    echo "<br> <font size='5'> <b> Conta de luz de  $nome </b> </font> <br>";
+    echo "$endereco. <br>";
+    echo "<font color='red'> Consumo: $consumo kWh </font> <br>";
+    echo "O valor a pagar:  <font size='5'> <b> R$$valorConta </b> </font> <br>";
 
 
 
 
-} else if ($quilowattsHora <= 120) {
+} else if ($consumo <= 120) {
 
-    $valorConta= (0.32 * $quilowattsHora);
+    $valorConta= $consumo * 0.32;
 
-    echo "<br> <br>  <font size='5'> <b> Conta de luz de $nomeCompletoCliente </b> </font> <br>";
-
-echo "$endereco. <br>";
-
-echo "<font color='#90ee90'> Consumo: $quilowattsHora kWh </font> <br>";
-
-echo "O valor a pagar:  <font size='5'> <b> R$$valorConta </b> </font> <br>";
-
-echo $agradecimento;
+    echo "<br> <font size='5'> <b> Conta de luz de $nome </b> </font> <br>";
+    echo "$endereco. <br>";
+    echo "<font color='green'> Consumo: $consumo kWh </font> <br>";
+    echo "O valor a pagar:  <font size='5'> <b> R$$valorConta </b> </font> <br>";
+    echo $agradecimento;
 }
 
 
 
 
 
-?>
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-</head>
-<body>
-    <style type="text/php">
-
-    .red {
-        color: red;
-    }
-
-    .green {
-        color: green;
-    }
-</style>
-</body>
-</html>
+// ?>
+// <!DOCTYPE html>
+// <html lang="pt-BR">
+// <head>
+//     <meta charset="UTF-8">
+//     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+//     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+//     <title></title>
+// </head>
+// <body>
+    
+// </style>
+// </body>
+// </html>
